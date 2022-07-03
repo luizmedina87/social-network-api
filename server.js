@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 
 mongoose.connect(
   // change
-  process.env.MONGODB_URI || "mongodb://localhost:27017/pizza-hunt",
+  process.env.MONGODB_URI || "mongodb://localhost:3001/social-network",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -22,4 +22,6 @@ mongoose.set("debug", true);
 
 app.use(require("./routes"));
 
-app.listen(PORT, () => console.log(`You are now connected to localhost:${PORT}`));
+app.listen(PORT, () =>
+  console.log(`You are now connected to localhost:${PORT}`)
+);
