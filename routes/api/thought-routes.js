@@ -14,3 +14,5 @@ const {
 // api/thoughts/:id
 
 // /api/thoughts/:thoughtId/reactions
+
+module.exports = router;
