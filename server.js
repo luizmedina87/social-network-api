@@ -6,20 +6,19 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// app.use(express.static('public'));
+app.use(express.static("public"));
+app.use(require("./routes"));
 
 mongoose.connect(
-  "mongodb://localhost:3001/social-network",
+  process.env.MONGODB_URI || "mongodb://localhost:27017/social-network",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }
 );
-
-// logging mongo queries being executed!
 mongoose.set("debug", true);
 
-app.use(require("./routes"));
+
 
 app.listen(PORT, () =>
   console.log(`You are now connected to localhost:${PORT}`)

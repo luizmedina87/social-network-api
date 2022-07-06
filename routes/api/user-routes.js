@@ -19,5 +19,3 @@ router.route("/").get(getAllUsers).post(createUser);
 // /api/users/:userId/friends/:friendId
 
 module.exports = router;
-
-module.exports = router;
